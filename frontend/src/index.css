@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar,
+.scroll-style::-webkit-scrollbar {
+    width: 8px;
+    background: #1a1a2e;
+}
+
+body::-webkit-scrollbar-thumb,
+.scroll-style::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #ff6f61;
+    box-shadow: inset 0px 0px 5px #000;
+}
+
+/* Header */
+.hiddenbox {
+    top: -80px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Chat Loading Style */
+#loader {
+    width: 40px;
+    aspect-ratio: 1;
+    background-image: url('./assets/backsign.webp');
+    background-size: 200% 100%;
+    animation: chatLoading 1s infinite alternate;
+}
+
+@keyframes chatLoading {
+    0%, 10% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Typing Animation */
+#typing-animation {
+    text-align: start;
+    margin: 13px 8px;
+}
+
+#typing-animation span {
+    display: inline-block;
+    margin-right: 3px;
+    width: 12px;
+    height: 12px;
+    background: #ff6f61;
+    border-radius: 50%;
+    animation: typing-animation 0.9s infinite alternate;
+}
+
+@keyframes typing-animation {
+    0% {
+        opacity: 1;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+}
+
+/* Shimmer Effect */
+.shimmer-animated {
+    background: linear-gradient(to right, #16213e, #1a1a2e, #16213e);
+    background-size: 300% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: -300% 0;
+    }
+}
+
+/* Home Page Animation */
+.home-page {
+    font-family: "Lora", serif;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6f61, #ff4757);
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff4757, #ff6f61);
+    transform: scale(1.05);
+}
+
+/* Inputs */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 2px solid #ff6f61;
+    background: #1a1a2e;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #ff4757;
+    box-shadow: 0px 0px 8px #ff4757;
+}
+
+/* Card Style */
+.card {
+    background-image: url('./assets/signup.webp');
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #121212;
+    color: #ff6f61;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button {
+        padding: 8px 16px;
+    }
+
+    .input-field {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
